@@ -7,7 +7,29 @@
 ### 4.Leaflet use map integration
 ```js
 // i need create a page called coverage there will have a title we are availabe in 64 districts below it will be a search box where i can search name of different district in Bangladesh (will tell you detail about search box later)
-First give me a map that i can show in the website that will show now i need to add explain the code details
+// First give me a map that i can show in the website that will show now i need to add explain the code details
+
+import React from 'react';
+import BangladeshMap from './BangladeshMap';
+import { useLoaderData } from 'react-router';
+
+
+const Coverage = () => {
+    const serviceCenters = useLoaderData();
+    
+    return (
+        <div className="max-w-4xl mx-auto px-4 py-10">
+            <h1 className="text-3xl font-bold text-center mb-6">We are available in 64 districts</h1>
+
+            {/* Later you can add your search box here */}
+            {/* <SearchDistrictBox /> */}
+
+            <BangladeshMap serviceCenters={serviceCenters} />
+        </div>
+    );
+};
+
+export default Coverage;
 
 
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
