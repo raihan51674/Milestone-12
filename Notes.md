@@ -1,7 +1,23 @@
 #### Module -1
 ### 1.Navber create -responsive
 ### 2.Banner create use - Carosol or swiper (react libary)
+```js
+1.add react-responsive-carousel
+2. npm install react-fast-marquee
+3. npm i swiper
+```
 ### 3.AOS use each website must be 
+```js
+1. npm install aos
+2. main.jsx file add :
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+3. use any component :
+<div data-aos="fade-right"></div>
+
+
+```
 
 #### Module -2
 ### 4.Leaflet use map integration
