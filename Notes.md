@@ -143,35 +143,55 @@ export default BangladeshMap;
 ```
 ### 5.Inventory Dashboard :
 ```js
+import { useState } from 'react';
+import { FiMenu } from 'react-icons/fi';
 import { NavLink, Outlet } from 'react-router-dom';
 
+const navItems = [
+  { name: 'Item 1', path: '/item1' },
+  { name: 'Item 2', path: '/item2' },
+];
+
 const Dashbroad = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen">
-      {/* Left Sidebar */}
-      <div className="w-60 bg-gray-100 p-4 flex flex-col space-y-3 shadow-md">
-        <NavLink
-          to="/item1"
-          className={({ isActive }) =>
-            isActive ? 'text-blue-600 font-bold' : 'text-gray-800'
-          }
-        >
-          Item1
-        </NavLink>
-        <NavLink
-          to="/item2"
-          className={({ isActive }) =>
-            isActive ? 'text-blue-600 font-bold' : 'text-gray-800'
-          }
-        >
-          Item2
-        </NavLink>
+    <div className="min-h-screen flex flex-col md:flex-row">
+      {/* Mobile Header */}
+      <div className="flex md:hidden justify-between items-center p-4 bg-gray-200 shadow-md">
+        <h1 className="text-lg font-semibold">Dashboard</h1>
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <FiMenu size={24} />
+        </button>
       </div>
 
-      {/* Right Content Area */}
-      <div className="flex-1 p-6">
+      {/* Sidebar or Dropdown Nav */}
+      <div
+        className={`${
+          isOpen ? 'block' : 'hidden'
+        } md:block bg-gray-100 p-4 shadow-md w-full md:w-60`}
+      >
+        <nav className="flex flex-col gap-3">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-blue-600 font-semibold underline'
+                  : 'text-gray-800'
+              }
+              onClick={() => setIsOpen(false)} // close on mobile after click
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 p-4">
         <Outlet />
-        <h1>Content</h1>
       </div>
     </div>
   );
