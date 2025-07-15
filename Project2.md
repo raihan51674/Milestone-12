@@ -1,4 +1,4 @@
-### Add axiosSecure :
+### 1.Add axiosSecure :
 ```js
 import React from 'react';
 import axios from 'axios'
@@ -22,3 +22,4 @@ export default useAxiosSesure;
     })
 
 ```
+### 2.Inventory Dashboard :
