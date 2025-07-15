@@ -20,7 +20,11 @@ AOS.init();
 ```
 
 #### Module -2
-### 4.Leaflet use map integration
+### 4.react-hook-form :
+```js
+npm i react-hook-form
+```
+### 5.Leaflet use map integration
 ```js
 // i need create a page called coverage there will have a title we are availabe in 64 districts below it will be a search box where i can search name of different district in Bangladesh (will tell you detail about search box later)
 // First give me a map that i can show in the website that will show now i need to add explain the code details
