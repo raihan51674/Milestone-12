@@ -141,4 +141,42 @@ const BangladeshMap = ({ serviceCenters }) => {
 
 export default BangladeshMap;
 ```
-### 5.
+### 5.Inventory Dashboard :
+```js
+import { NavLink, Outlet } from 'react-router-dom';
+
+const Dashbroad = () => {
+  return (
+    <div className="flex min-h-screen">
+      {/* Left Sidebar */}
+      <div className="w-60 bg-gray-100 p-4 flex flex-col space-y-3 shadow-md">
+        <NavLink
+          to="/item1"
+          className={({ isActive }) =>
+            isActive ? 'text-blue-600 font-bold' : 'text-gray-800'
+          }
+        >
+          Item1
+        </NavLink>
+        <NavLink
+          to="/item2"
+          className={({ isActive }) =>
+            isActive ? 'text-blue-600 font-bold' : 'text-gray-800'
+          }
+        >
+          Item2
+        </NavLink>
+      </div>
+
+      {/* Right Content Area */}
+      <div className="flex-1 p-6">
+        <Outlet />
+        <h1>Content</h1>
+      </div>
+    </div>
+  );
+};
+
+export default Dashbroad;
+
+```
