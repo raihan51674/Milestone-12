@@ -22,4 +22,19 @@ export default useAxiosSesure;
     })
 
 ```
-### 2.Inventory Dashboard :
+### 2.Tanstack Quary :
+```js
+1.npm i @tanstack/react-query
+2.main.jsx add :
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+const queryClient = new QueryClient()
+<QueryClientProvider client={queryClient}>
+      //AuthProveider
+    </QueryClientProvider>
+```
+### 3. TanStack Use :
+```js
+```
