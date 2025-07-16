@@ -1,7 +1,7 @@
 ### Image Upload use ImgBB :
 ```js
-1.get api key form the Imgbb :
-2.FRONTEND:
+//1.get api key form the Imgbb :
+//2.FRONTEND:
  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Upload profile picture
             </label>
@@ -28,7 +28,7 @@
     setProfilePic(res.data.data.url);
   }
 
-and update firebase :
+//and update firebase :
 
 // add AuthProvider
  //const UpdateProfile= (profileInfo)=>{
